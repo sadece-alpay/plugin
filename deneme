@@ -1,0 +1,14 @@
+const Asena = require('../events');
+const{MessageType} = require('@adiwajshing/baileys');
+
+Asena.addCommand({pattern: 'görüldü', fromMe: true}, (async (message, match) => {
+
+    await message.sendMessage('```Görüldü atılıyor...```');
+    await new Promise(r => setTimeout(r, 1000));
+
+    await message.sendMessage('```Yükleniyor...```');
+    await new Promise(r => setTimeout(r, 1000));
+
+    await message.sendMessage('```Tamamlandı.```');
+
+}));
